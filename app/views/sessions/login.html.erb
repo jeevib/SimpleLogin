@@ -1,0 +1,20 @@
+<section class="section-padding">
+  <div class="middle-division">
+    <%= form_with(url: login_path, local: true) do |form| %>
+
+      <div class="field">
+        <%#= form.label :email %>
+        <%= form.text_field :email, placeholder:"Email", :class=>"order-form-spacing" %>
+      </div>
+
+      <div class="field">
+        <%#= form.label :password %>
+        <%= form.password_field :password, placeholder:"Password", :class=>"order-form-spacing" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Login" %>
+      </div>
+    <% end %>
+  </div>
+</section>
