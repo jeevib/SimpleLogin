@@ -1,0 +1,68 @@
+
+body{
+	font-family: Montserrat-Regular;
+	/*color: #535857;*/
+}
+
+a{
+	color: #272529!important;
+	text-decoration: none!important;
+}
+
+label{
+	margin-bottom: 0px!important;
+}
+
+.order-form-spacing{
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	width: 100%;
+	border: 1px solid #c0c0d2;
+	background-color: #fff;
+	min-height: 35px!important;
+}
+
+.new-page-font:hover{
+	color: #2f2f61!important;
+}
+.new-page-font{
+	padding-left: 10px!important;
+}
+.section-padding{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.section-padding-half{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.paragraph{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.paragraph-heading{
+	margin: 10px 0px;
+	font-size: 24px;
+}
+
+/*application.html.erb*/
+.navbar{
+	/*border-bottom: 2px solid #c0c0d2;*/
+	min-height: 60px;
+	box-shadow: 2px 5px 8px #f2f5f9;
+}
+.nav-font{
+	font-size: 20px;
+	margin: 0px 10px;
+	/*font-family: Montserrat-Light;*/
+	color: #252729!important;
+}
+
+
+/*login.html.erb*/
+.middle-division{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,34 @@
+<%= form_with(model: @customer, url: customers_update_path, local: true) do |f| %>  
+  <div class="row">
+    <div class="col-lg-6">
+      <%= f.hidden_field :id, id:"edit_custom_id" %>
+
+      <div class="field-position">
+        <div><%= f.label :name %></div>
+        <%= f.text_field :name, :class=>"order-form-spacing", :id=>"custom_company_name" %>
+      </div>
+
+      <div class="field-position">
+        <div><%= f.label :email %></div>
+        <%= f.text_field :email, :class=>"order-form-spacing", :id=>"custom_email" %>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="field-position">
+        <div><%= f.label :password %><span class="red"> * </span></div>
+        <%= f.telephone_field :password, :class=>"order-form-spacing", :id=>"custom_number1" %>
+      </div>
+
+      <div class="field-position">
+        <div><%= f.label :mobile %></div>
+        <%= f.telephone_field :mobile,  :class=>"order-form-spacing", :id=>"custom_number2" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "submit" %>
+      </div>
+
+    </div>
+  </div>
+<% end %> 

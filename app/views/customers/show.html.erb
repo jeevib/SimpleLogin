@@ -1,0 +1,22 @@
+<section class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 right-float">
+				<%#= image_tag("profile.jpg", :class=>"profile-blank") %>
+			</div>
+			<div class="col-lg-8">
+				<p>
+				  <strong>Name:</strong>
+				  <%= @customer.name %>
+				</p>
+
+				<p>
+				  <strong>Email:</strong>
+				  <%= @customer.email %>
+				</p>
+				<%= link_to 'Edit', customers_edit_path(@customer) %> |
+				<%= link_to 'Back', customers_index_path %>			
+			</div>
+		</div>
+	</div>
+</section>

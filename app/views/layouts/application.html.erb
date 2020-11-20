@@ -15,31 +15,30 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="collapse navbar-collapse" id="">
             <ul class="navbar-nav ml-auto">
-              <% binding.pry %>
+              <% if current_user %>
                 <li class="nav-item">
                   <%= link_to "Register", "#", :class=>"nav-font" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to 'Customer list', "#", :class=>"nav-font" %>
+                  <%= link_to 'Customer list', customers_index_path, :class=>"nav-font" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to 'Add Customer', customers_create_path, :class=>"nav-font" %>
+                  <%= link_to 'Add Customer', customers_new_path, :class=>"nav-font" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Add Address", "#", :class=>"nav-font" %>
+                  <%= link_to "Delete customer", "#", :class=>"nav-font" %>
                 </li>
-                <!-- <li class="nav-item dropdown"> -->
-                  <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
-                    <%#= link_to "Profile", employee_path(current_user.id), :class=>"dropdown-item nav-font" %>                
-                    <!-- <div class="dropdown-divider"></div> -->
-                    <%#= link_to "Logout" ,logout_path, method:"delete", :class=>"dropdown-item nav-font" %>
-                  <!-- </div> -->
-                <!-- </li> -->
+                <li class="nav-item dropdown">
+                  
+                    <%= link_to "Logout" ,logout_path, method:"delete", :class=>"dropdown-item nav-font" %>
+                </li>
+              <% else %>
                 <li class="nav-item">
                   <%= link_to login_path do %>
-                    <!-- <span class="nav-font">Login</span> -->
+                    <span class="nav-font">Login</span>
                   <% end %>
                 </li>
+              <% end %>
             </ul>
           </div>
         </nav>
