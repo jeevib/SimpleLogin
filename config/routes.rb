@@ -15,4 +15,11 @@ Rails.application.routes.draw do
   get 'customers/edit/:id' => 'customers#edit', as: 'customers_edit'
   patch 'customers/update' => 'customers#update', as: 'customers_update'
   delete 'customers/destroy/:id' => 'customers#destroy', as: 'customers_destroy'
+
+  #sidekiq
+  require 'sidekiq/web'
+
+  Rails.application.routes.draw do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
