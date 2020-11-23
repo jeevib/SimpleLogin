@@ -1,11 +1,9 @@
-# Preview all emails at http://localhost:3000/rails/mailers/email_notifier_mailer
+# Preview all emails at http://localhost:3000/rails/mailers/email_notifier_mailer/customer_first_mail
 class EmailNotifierMailerPreview < ActionMailer::Preview
-	# default from: "notifications@example.com"
 
-	# def customer_first_mail(customer)
-	# 	puts "**********#{customer}customer_first_mail***********"
-	# 	@customer = customer
-	#     @url  = 'http://localhost:3000'
-	#     mail(to: @customer.email, subject: 'Welcome to My Sample Site')
-	# end
+	def customer_first_mail
+		#Preview this email at http://localhost:3000/rails/mailers/email_notifier_mailer/customer_first_mail
+		@customer = Customer.last
+	    EmailNotifierMailer.customer_first_mail(@customer).deliver_later
+	end
 end

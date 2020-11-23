@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
 	def create
 		@customer = Customer.new(name: params[:customer][:name], email: params[:customer][:email], password_digest: params[:customer][:password], mobile: params[:customer][:mobile])
 		if @customer.save
-			EmailNotifierMailer.customer_first_mail(@customer).deliver_now!
+			EmailNotifierMailer.customer_first_mail(@customer).deliver_later
 			# format.html { redirect_to(@customer, notice: 'Customer was successfully created.') }
 		end
 		redirect_to home_path
