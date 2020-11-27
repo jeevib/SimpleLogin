@@ -24,6 +24,18 @@
         <div><%= f.label :mobile %></div>
         <%= f.telephone_field :mobile,  :class=>"order-form-spacing", :id=>"custom_number2" %>
       </div>
+      <% if @customer.resume.attached? %>
+        <div class="field-position">
+          <div><%= f.label :resume %></div>
+         <%= @customer.resume.blob.filename.to_s %>
+         <button type="button">
+            <%= link_to "Download", rails_blob_path(@customer.resume, disposition: 'attachment') %>
+          </button>
+          <button type="button">
+            <%= link_to "Preview", rails_blob_path(@customer.resume, disposition: 'preview'),target: :_blank %>
+          </button>
+        </div>
+      <% end %>
 
       <div class="actions">
         <%= f.submit "submit" %>

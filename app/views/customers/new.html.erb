@@ -24,6 +24,11 @@
         <%= f.telephone_field :mobile,  :class=>"order-form-spacing", :id=>"custom_number2" %>
       </div>
 
+      <div class="field-position">
+        <div><%= f.label :resume %></div>
+        <%= f.file_field :resume,  :class=>"order-form-spacing", :id=>"custom_number2" %>
+      </div>
+
       <div class="actions">
         <%= f.submit "submit" %>
       </div>

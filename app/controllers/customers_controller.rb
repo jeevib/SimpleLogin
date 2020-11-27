@@ -9,7 +9,7 @@ class CustomersController < ApplicationController
 	end
 
 	def create
-		@customer = Customer.new(name: params[:customer][:name], email: params[:customer][:email], password_digest: params[:customer][:password], mobile: params[:customer][:mobile])
+		@customer = Customer.new(name: params[:customer][:name], email: params[:customer][:email], password_digest: params[:customer][:password], mobile: params[:customer][:mobile], resume: params[:customer][:resume])
 		if @customer.save
 			EmailNotifierMailer.customer_first_mail(@customer).deliver_later
 			# format.html { redirect_to(@customer, notice: 'Customer was successfully created.') }
@@ -43,6 +43,6 @@ class CustomersController < ApplicationController
 
 	private
       def customer_params
-        params.require(:customer).permit(:id, :name, :email, :password, :mobile)
+        params.require(:customer).permit(:id, :name, :email, :password, :mobile, :resume)
       end
 end
