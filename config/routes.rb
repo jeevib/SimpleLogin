@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   get 'customers/edit/:id' => 'customers#edit', as: 'customers_edit'
   patch 'customers/update' => 'customers#update', as: 'customers_update'
   delete 'customers/destroy/:id' => 'customers#destroy', as: 'customers_destroy'
-  # post 'customers/resume_upload/:id' => 'customers#resume_upload', as: 'customer_resume_upload'
-  # delete 'customers/remove_resume/:id' => 'customers#remove_resume', as: 'customer_resume_remove'
+  delete 'customers/resume_delete/:id' => 'customers#resume_delete', as: 'customer_resume_delete'
 
   #sidekiq
   require 'sidekiq/web'

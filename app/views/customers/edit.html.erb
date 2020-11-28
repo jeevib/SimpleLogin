@@ -34,6 +34,9 @@
           <button type="button">
             <%= link_to "Preview", rails_blob_path(@customer.resume, disposition: 'preview'),target: :_blank %>
           </button>
+          <button type="button">
+            <%= link_to "Delete", customer_resume_delete_path(@customer.id), method: :delete, data: { confirm: 'Are you sure ?' } %>
+          </button>
         </div>
       <% end %>
 

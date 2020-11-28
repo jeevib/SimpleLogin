@@ -41,6 +41,12 @@ class CustomersController < ApplicationController
 		redirect_to customers_index_path
 	end
 
+	def resume_delete
+		@customer = Customer.find(params[:id])
+		@customer.resume.purge if @customer.resume.attached?
+		redirect_to customers_edit_path(@customer)
+	end
+
 	private
       def customer_params
         params.require(:customer).permit(:id, :name, :email, :password, :mobile, :resume)
