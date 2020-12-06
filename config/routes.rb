@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   delete 'customers/destroy/:id' => 'customers#destroy', as: 'customers_destroy'
   delete 'customers/resume_delete/:id' => 'customers#resume_delete', as: 'customer_resume_delete'
 
+  #webhook
+  post '/fetch_customer_details' => 'webhook#fetch_customer_details'
+
   #sidekiq
   require 'sidekiq/web'
 
