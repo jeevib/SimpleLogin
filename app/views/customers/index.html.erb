@@ -28,4 +28,6 @@
 
 <br>
 
-<%#= link_to 'New Customer', new_customer_path %>
+<%= link_to 'Next', customers_index_path(page: @page + 1) %>
+|
+<%= link_to 'Previous', customers_index_path(page: @page - 1) %>

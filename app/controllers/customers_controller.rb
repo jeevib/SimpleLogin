@@ -1,7 +1,9 @@
 class CustomersController < ApplicationController
+	CUSTOMERS_PER_PAGE = 10
 
 	def index
-		@customers = Customer.all
+		@page = params.fetch(:page, 0).to_i
+		@customers = Customer.offset(@page * CUSTOMERS_PER_PAGE).limit(CUSTOMERS_PER_PAGE)
 	end
 
 	def new
