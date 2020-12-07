@@ -27,7 +27,10 @@
 </table>
 
 <br>
-
-<%= link_to 'Next', customers_index_path(page: @page + 1) %>
+<% unless @remaing_page <= 10 %>
+  <%= link_to 'Next', customers_index_path(page: @page + 1) %>
 |
-<%= link_to 'Previous', customers_index_path(page: @page - 1) %>
+<% end %>
+<% if @remaing_page != Customer.count %>
+  <%= link_to 'Previous', customers_index_path(page: @page - 1) %>
+<% end %>

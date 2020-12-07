@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
 	def index
 		@page = params.fetch(:page, 0).to_i
+		@remaing_page = Customer.count - (@page * CUSTOMERS_PER_PAGE)
 		@customers = Customer.offset(@page * CUSTOMERS_PER_PAGE).limit(CUSTOMERS_PER_PAGE)
 	end
 
