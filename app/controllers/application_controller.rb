@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
 
  	private
  	def require_login
- 		# unless !current_user.nil?
- 		# 	redirect_to login_path
- 		# end
+ 		unless !current_user.nil?
+ 			redirect_to login_path
+ 		end
  	end
 end
