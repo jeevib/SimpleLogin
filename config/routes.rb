@@ -6,10 +6,16 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  #customers controller
+  # customers controller
+  resources :customers do
+    member do
+      get :confirm_email
+    end
+  end
   get 'customers/new' => 'customers#new'
   post 'customers/create' => 'customers#create'
   get '/home' => 'customers#home'
+  get '/email_activated' => 'customers#email_activated'
   get 'customers/index' => 'customers#index'
   get 'customers/show/:id' => 'customers#show', as: 'customers_show'
   get 'customers/edit/:id' => 'customers#edit', as: 'customers_edit'

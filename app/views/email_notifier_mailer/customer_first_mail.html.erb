@@ -9,7 +9,7 @@
       your customer name is: <%= @customer.name %>.<br>
     </p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      To login to the site, just follow this link: <%= confirm_email_customer_url(@customer.confirm_token_status) %>
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>

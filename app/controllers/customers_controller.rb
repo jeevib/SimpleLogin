@@ -50,8 +50,21 @@ class CustomersController < ApplicationController
 		redirect_to customers_edit_path(@customer)
 	end
 
+	def confirm_email
+	    customer = Customer.find_by_confirm_token_status(params[:id])
+	    if customer
+	      customer.email_activate
+	      flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
+	      Please sign in to continue."
+	      redirect_to login_path
+	    else
+	      flash[:error] = "Sorry. User does not exist"
+	      redirect_to login_path
+	    end
+	end
+
 	private
       def customer_params
-        params.require(:customer).permit(:id, :name, :email, :password, :mobile, :resume)
+        params.require(:customer).permit(:id, :name, :email, :password, :mobile, :resume, :email_confirmation, :confirm_token_status)
       end
 end
